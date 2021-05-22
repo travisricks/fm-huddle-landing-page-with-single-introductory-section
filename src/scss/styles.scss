@@ -1,4 +1,3 @@
-// source: https://css-irl.info/a-modern-front-end-workflow-part-3/
 @import "./01-config/variables";
 @import "./01-config/mixins";
 @import "./01-config/functions";
@@ -10,32 +9,171 @@
 @import "./04-globals/footer";
 @import "./04-globals/layout";
 
-// * {
-//   outline: 1px solid hotpink;
-// }
-// body {
-//   font-family: "Lexend Deca", sans-serif;
-//   font-weight: 400;
-//   color: $white-transparent;
-//   background-color: $gray;
-//   font-size: 15px;
-//   line-height: 1.6;
-//   @media (min-width: $desktop) {
-//     display: grid;
-//     place-items: center;
-//   }
-// }
+$violet: hsl(257, 40%, 49%);
+$magenta: hsl(300, 69%, 71%);
+
+$font-open-sans: "Open Sans", sans-serif;
+$font-poppins: "Poppins", sans-serif;
+$font-bold: 600;
+$font-regular: 400;
+$desktop: 901px;
+
+* {
+  // outline: 1px solid hotpink;
+}
+body {
+  font-family: $font-open-sans;
+  font-weight: $font-regular;
+  color: white;
+  background-color: $violet;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+}
 .wrapper {
-  display: grid;
-  grid-template-columns: 1fr calc(min(60ch, (100% - 64px))) 1fr;
-  grid-column-gap: 32px;
+  width: 375px;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../icons/bg-mobile.svg);
+  background-repeat: no-repeat;
+
+  @media (min-width: $desktop) {
+    width: unset;
+    max-width: 1260px;
+    background-image: url(../icons/bg-desktop.svg);
+    padding: 64px 85px 40px 80px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
-.wrapper > * {
-  grid-column: 2;
+.row {
+  @media (min-width: $desktop) {
+    display: flex;
+    margin-top: 104px;
+    text-align: left;
+    width: 1260px;
+  }
+}
+.text-wrapper {
+  @media (min-width: $desktop) {
+    padding-top: 32px;
+    padding-right: 10px;
+  }
 }
 
-.full-bleed {
-  width: 100%;
-  grid-column: 1 / -1;
+.app-illustration {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  margin-bottom: 60px;
+
+  @media (min-width: $desktop) {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 696px;
+    height: 493px;
+    margin-right: 59px;
+  }
+}
+.app-logo {
+  width: 120px;
+  height: 19px;
+
+  @media (min-width: $desktop) {
+    width: 200px;
+    height: auto;
+  }
+}
+
+h1 {
+  font-family: $font-poppins;
+  font-weight: $font-bold;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 16px;
+
+  @media (min-width: $desktop) {
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: 60px;
+  }
+}
+
+p {
+  margin-bottom: 24px;
+  font-size: 16px;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 24px;
+  margin-left: -5px;
+  margin-right: -5px;
+
+  @media (min-width: $desktop) {
+    font-size: 18px;
+    line-height: 27px;
+    text-align: left;
+    margin-top: 24px;
+  }
+}
+
+button {
+  background: #ffffff;
+  box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.27);
+  border-radius: 20px;
+  font-family: $font-poppins;
+  font-size: 12px;
+  color: #684bb1;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  width: 200px;
+  height: 40px;
+  transition: all 0.25s ease;
+
+  @media (min-width: $desktop) {
+    height: 56px;
+    box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.26);
+    border-radius: 28px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+.social {
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  margin: 64px auto 0 auto;
+
+  @media (min-width: $desktop) {
+    margin-top: 173px;
+    width: 152px;
+    height: 40px;
+    margin-right: 0;
+  }
+
+  .icon-wrapper {
+    width: 28px;
+    height: 28px;
+    fill: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 6px;
+
+    @media (min-width: $desktop) {
+      height: 40px;
+      width: 40px;
+      display: grid;
+      place-items: center;
+    }
+  }
+  img {
+    height: 13px;
+    @media (min-width: $desktop) {
+      height: 19px;
+    }
+  }
 }
