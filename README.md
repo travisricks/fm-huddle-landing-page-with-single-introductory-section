@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live Site on Netlify]()
+- Live Site URL: [Live Site on Netlify](https://modest-thompson-63a5f2.netlify.app)
 
 ## My process
 
